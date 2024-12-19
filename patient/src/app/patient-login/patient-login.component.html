@@ -1,0 +1,67 @@
+<div class="container">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <i class="fa-solid fa-ambulance"></i>
+      <span>Xoriant</span>
+    </div>
+    <ul class="navbar-right">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <div class="main-content">
+    <div class="left-panel">
+      <div class="tagline">
+        <i class="fa-solid fa-ambulance"></i>
+        <h2>We are here for you</h2>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="login-card">
+        <div class="icon">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <h2>Patient Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email Id:</label>
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email" 
+              placeholder="Enter your email" 
+            />
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
+              <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</small>
+              <small *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input 
+              type="password" 
+              id="password" 
+              formControlName="password" 
+              placeholder="Enter your password" 
+            />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+              <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+              <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</small>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

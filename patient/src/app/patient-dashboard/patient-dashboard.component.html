@@ -1,0 +1,48 @@
+<!-- Navbar -->
+<div class="navbar">
+  <div class="navbar-left">
+    <i class="fas fa-plus"></i>
+    <span class="hospital-name">Hospital Name</span>
+  </div>
+  <div class="navbar-right">
+    <a href="#">Logout <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+  <div class="navbar-menu">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard" *ngIf="firstName">
+  <h1>Welcome {{ firstName }}</h1>
+
+  <div class="dashboard-actions">
+    <div class="action">
+      <i class="fas fa-calendar-plus"></i>
+      <span>Book My Appointment</span>
+    </div>
+    <div class="action">
+      <i class="fas fa-file-alt"></i>
+      <span>My Appointments</span>
+    </div>
+    <div class="action">
+      <i class="fas fa-user-md"></i>
+      <span>Find My Doctor</span>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="dashboard-menu">
+  <ul>
+    <li>Dashboard</li>
+    <li>Appointment Details</li>
+    <li>View Available Doctors</li>
+    <li>View Medical History</li>
+    <li><a [routerLink]="['/MyTest']">My Tests</a></li>
+    <li>View Payment History</li>
+    <li>My Profile</li>
+  </ul>
+</div>

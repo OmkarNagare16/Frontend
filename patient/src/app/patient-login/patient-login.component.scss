@@ -1,0 +1,174 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container Styling */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6f2bfc;
+  color: white;
+  padding: 1rem 2rem;
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+  .navbar-right {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #d4c1ff;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-right {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
+}
+
+/* Main Content Section */
+.main-content {
+  display: flex;
+  flex: 1;
+
+  .left-panel {
+    background-color: #6f2bfc;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .tagline {
+      i {
+        font-size: 4rem;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .right-panel {
+    flex: 1;
+    background-color: #f6f3f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+
+      .icon {
+        font-size: 3rem;
+        color: #6f2bfc;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.5rem;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 1rem;
+        }
+      }
+
+      .error {
+        color: red;
+        font-size: 0.85rem;
+        margin-top: 5px;
+      }
+
+
+
+      button {
+        background-color: #6f2bfc;
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #5a23cb;
+        }
+      }
+    }
+  }
+}
+
+
+

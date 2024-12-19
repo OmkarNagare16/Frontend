@@ -1,0 +1,130 @@
+/* Container */
+.container {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6b47dc;
+    padding: 10px 20px;
+    color: #fff;
+  
+    .navbar-left {
+      display: flex;
+      align-items: center;
+  
+      i {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+    }
+  
+    .navbar-right {
+      display: flex;
+      gap: 20px;
+  
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+  
+        &.logout {
+          display: flex;
+          align-items: center;
+  
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Main Content */
+  .main {
+    display: flex;
+    margin-top: 20px;
+  
+    /* Content Area (Left Section) */
+    .content-left {
+      width: 70%;
+      padding: 20px;
+  
+      h2 {
+        margin-bottom: 20px;
+        color: #6b47dc;
+      }
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        thead {
+          background-color: #6b47dc;
+          color: #fff;
+  
+          th {
+            padding: 10px;
+            text-align: left;
+          }
+        }
+  
+        tbody {
+          tr {
+            &:nth-child(odd) {
+              background-color: #f9f9f9;
+            }
+  
+            &:nth-child(even) {
+              background-color: #fff;
+            }
+  
+            &:hover {
+              background-color: #ececec;
+            }
+  
+            td {
+              padding: 10px;
+              border: 1px solid #ddd;
+  
+              i {
+                color: #6b47dc;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    /* Sidebar (Right Section) */
+    .sidebar-right {
+      width: 30%;
+      background-color: #f4f4f4;
+      padding: 15px;
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          padding: 10px 15px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          background-color: #fff;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+  
+          &:hover,
+          &.active {
+            background-color: #6b47dc;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }

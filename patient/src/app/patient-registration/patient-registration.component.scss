@@ -1,0 +1,264 @@
+.container {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6b47dc;
+    padding: 15px 25px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+    .navbar-left {
+        display: flex;
+        align-items: center;
+
+        i {
+            margin-right: 12px;
+        }
+    }
+
+    .navbar-right {
+        display: flex;
+        list-style: none;
+
+        li {
+            margin-right: 25px;
+            a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                
+                &:hover {
+                    color: #f7f2fa;
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Main Content Section */
+.content {
+    display: flex;
+    height: 100vh;
+    border-radius: 10px;
+
+    .left-panel {
+        flex: 1;
+        background-color: #6b47dc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        padding: 20px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        
+        .welcome-section {
+            text-align: center;
+
+            i {
+                font-size: 60px;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                font-size: 28px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .right-panel {
+        flex: 1.5;
+        background-color: #f7f2fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            h2 {
+                text-align: center;
+                font-size: 26px;
+                margin-bottom: 25px;
+                color: #6b47dc;
+            }
+
+            .toggle-buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 25px;
+
+                button {
+                    flex: 1;
+                    margin: 0 10px;
+                    padding: 15px;
+                    border: none;
+                    border-radius: 8px;
+                    background-color: #6b47dc;
+                    color: #fff;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.3s ease;
+                    
+                    &.active {
+                        background-color: #4a2ba5;
+                    }
+
+                    &:hover {
+                        background-color: #4a2ba5;
+                        transform: scale(1.05);
+                    }
+                }
+                
+            }
+            .center-container {
+                display: flex;
+                justify-content: center; /* Aligns horizontally */
+                align-items: center; /* Aligns vertically */
+                height: 10vh; /* Makes the container take full viewport height */
+              }
+              
+              .center-container h4 {
+                text-align: center;
+              }
+              
+
+            .form-group {
+                margin-bottom: 20px;
+
+                label {
+                    display: block;
+                    margin-bottom: 8px;
+                    font-size: 16px; /* Set consistent font size for all labels */
+                    color: #6b47dc;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 14px;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    transition: border-color 0.3s ease;
+                    
+                    &:focus {
+                        border-color: #6b47dc;
+                        outline: none;
+                    }
+                }
+            }
+
+            .row {
+                display: flex;
+                justify-content: space-between;
+
+                .form-group {
+                    flex: 1;
+                    margin: 0 15px;
+                }
+            }
+
+            .gender-section {
+                margin-bottom: 20px;
+                text-align: center;
+
+                label {
+                    margin-right: 20px;
+                }
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                border: none;
+                border-radius: 8px;
+                background-color: #6b47dc;
+                color: #fff;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+
+                &:disabled {
+                    background-color: #ccc;
+                    cursor: not-allowed;
+                }
+
+                &:hover {
+                    background-color: #4a2ba5;
+                    transform: scale(1.05);
+                }
+            }
+
+            .login-link {
+                margin-top: 20px;
+                text-align: center;
+                color: #6b47dc;
+                cursor: pointer;
+                font-size: 16px;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #4a2ba5;
+                }
+            }
+        }
+    }
+}
+
+/* Additional space for radio buttons */
+input[type="radio"] {
+    margin-right: 15px;
+    margin-top: 5px;
+    transition: transform 0.3s ease;
+}
+
+input[type="radio"]:hover {
+    transform: scale(1.1);
+}
+
+/* Added vertical spacing between form fields */
+.form-group {
+    margin-bottom: 20px; /* Add more space between form fields */
+}
+
+input, button {
+    transition: all 0.3s ease;
+}
+
+/* Ensure consistent font size across all input fields */
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"] {
+    font-size: 16px; /* Consistent font size for input fields */
+}
+
+/* Add space between fields for better readability */
+.form-group input {
+    margin-bottom: 15px; /* Adds space between each field */
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  

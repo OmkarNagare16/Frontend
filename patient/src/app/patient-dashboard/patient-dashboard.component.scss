@@ -1,0 +1,168 @@
+/* Variables */
+$primary-color: #6a0dad;
+$secondary-color: #f2f2f2;
+$text-color: #333;
+$white: #fff;
+
+/* General Body Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  color: $white;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+
+  &-left {
+    display: flex;
+    align-items: center;
+
+    .hospital-name {
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  &-right {
+    a {
+      color: $white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: darken($white, 20%);
+      }
+    }
+  }
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    color: $text-color;
+    margin-bottom: 30px;
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    .action {
+      text-align: center;
+      background-color: $secondary-color;
+      padding: 20px;
+      border-radius: 10px;
+      width: 150px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      i {
+        font-size: 30px;
+        color: $primary-color;
+      }
+
+      span {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+/* Sidebar Menu */
+.dashboard-menu {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+      background-color: $secondary-color;
+      padding: 10px;
+      margin: 5px 0;
+      text-align: left;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 14px;
+      color: $text-color;
+      padding-left: 15px;
+
+      &:hover {
+        background-color: lighten($primary-color, 40%);
+        color: $white;
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+
+    &-menu {
+      margin-top: 10px;
+    }
+  }
+
+  .dashboard-actions {
+    flex-direction: column;
+    gap: 20px;
+
+    .action {
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+
+/* Remove underline and default link styles from the routerLink */
+.dashboard-menu a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from the parent, to avoid default blue color */
+}
+
+.dashboard-menu a:hover {
+  background-color: #f0f0f0; /* Optional: Add hover effect */
+  color: #333; /* Optional: Change text color on hover */
+}

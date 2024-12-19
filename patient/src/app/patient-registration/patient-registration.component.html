@@ -1,0 +1,119 @@
+<div class="container">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <i class="fa-solid fa-user"></i>
+        <span>Hospital Name</span>
+      </div>
+      <ul class="navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  
+    <!-- Content Section -->
+    <div class="content">
+      <div class="left-panel">
+        <div class="welcome-section">
+          <i class="fa-solid fa-ambulance"></i>
+          <h2>Welcome</h2>
+        </div>
+      </div>
+  
+      <div class="right-panel">
+        <div class="form-container">
+          <!-- Toggle Options -->
+          <div class="toggle-buttons">
+            <button class="active">Patient</button>
+          </div>
+  
+          <!-- Form -->
+          <div class="center-container">
+            <h4>Register As Patient</h4>
+          </div>
+  
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input id="firstName" type="text" formControlName="firstName"  placeholder="Enter First Name" />
+                <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+                  <small class="error">
+                    First Name is required and should not contain numbers.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" type="text" formControlName="lastName" placeholder="Enter Last Name" />
+                <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
+                  <small class="error">
+                    Last Name is required and should not contain numbers.
+                  </small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" formControlName="email" placeholder="Enter Email" />
+                <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+                  <small class="error">Please enter a valid email.</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact">Contact</label>
+                <input id="contact" type="text" formControlName="contact" placeholder="Enter Contact Number" />
+                <div *ngIf="signupForm.get('contact')?.invalid && signupForm.get('contact')?.touched">
+                  <small class="error">Contact number must be 10 digits.</small>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" formControlName="password" placeholder="Enter Password" />
+                <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+                  <small class="error">Password is required and should be at least 6 characters long.</small>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirm Password" />
+                <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+                  <small class="error">Confirm Password is required.</small>
+                </div>
+                <div *ngIf="signupForm.get('confirmPassword')?.value !== signupForm.get('password')?.value && signupForm.get('confirmPassword')?.touched">
+                  <small class="error">Passwords do not match.</small>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Gender Radio Buttons -->
+            <div class="gender-section">
+              <label>
+                <input type="radio" formControlName="gender" value="Male" /> Male
+              </label>
+              <label>
+                <input type="radio" formControlName="gender" value="Female" /> Female
+              </label>
+              <div *ngIf="signupForm.get('gender')?.invalid && signupForm.get('gender')?.touched">
+                <small class="error">Please select your gender.</small>
+              </div>
+            </div>
+  
+            <!-- Register Button -->
+            <button type="submit" [disabled]="signupForm.invalid">Register</button>
+  
+            <!-- Already Have Account -->
+            <p class="login-link">Already have an account?</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
